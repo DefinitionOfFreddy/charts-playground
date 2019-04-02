@@ -1,0 +1,76 @@
+<div style="text-align:center">
+	<h1>
+		{{ title }}
+	</h1>
+
+	<div>
+		<mat-form-field>
+			<mat-select placeholder="Graphes à charger" matTooltip={{charts.value}} [formControl]="charts" multiple>
+				<mat-option *ngFor="let chart of chartList" [value]="chart">{{chart}}</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+
+
+	<div *ngIf="isSelected(CHARTS_OPTIONS.first)">
+		<h2>{{CHARTS_OPTIONS.first}}</h2>
+		<app-first-highcharts-graph></app-first-highcharts-graph>
+		<mat-divider></mat-divider>
+
+	</div>
+
+	<div *ngIf="isSelected(CHARTS_OPTIONS.comparison)">
+		<h2>{{CHARTS_OPTIONS.comparison}}</h2>
+		<app-comparaison-librairies></app-comparaison-librairies>
+		<mat-divider></mat-divider>
+
+	</div>
+
+	<div *ngIf="isSelected(CHARTS_OPTIONS.firstServiceUse)">
+		<h2>{{CHARTS_OPTIONS.firstServiceUse}}</h2>
+		<app-charts-using-service></app-charts-using-service>
+		<mat-divider></mat-divider>
+
+	</div>
+
+	<div *ngIf="isSelected(CHARTS_OPTIONS.usePlugin)">
+		<h2>{{CHARTS_OPTIONS.usePlugin}}</h2>
+		<app-charts-draggable></app-charts-draggable>
+		<mat-divider></mat-divider>
+
+	</div>
+
+	<div *ngIf="isSelected(CHARTS_OPTIONS.overload)">
+		<h2>{{CHARTS_OPTIONS.overload}}</h2>
+		<app-overload-graphs></app-overload-graphs>
+		<mat-divider></mat-divider>
+
+	</div>
+	<div *ngIf="isSelected(CHARTS_OPTIONS.addButton)">
+		<h2>{{CHARTS_OPTIONS.addButton}}</h2>
+		<app-ajout-bouton></app-ajout-bouton>
+		<mat-divider></mat-divider>
+
+	</div>
+
+	<div *ngIf="isSelected(CHARTS_OPTIONS.highstock)">
+		<h2>{{CHARTS_OPTIONS.highstock}}</h2>
+		<app-highstock-example></app-highstock-example>
+		<mat-divider></mat-divider>
+
+	</div>
+
+
+	<div >
+		<div>
+			<!--qr-code [value]="'https://charts-playground.stackblitz.io'" [size]="300"></qr-code-->
+		</div>
+		<div>
+			<a mat-stroked-button href="https://stackblitz.com/edit/charts-playground">Accéder au code source</a>
+		</div>
+		<div>
+			<a mat-stroked-button href="https://highcharts-js-exemple.stackblitz.io/">Lien stackblitz javascript</a>
+		</div>
+	</div>
+
+</div>

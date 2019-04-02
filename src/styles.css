@@ -1,0 +1,23 @@
+/* Add application styles & imports to this file! */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 4;
+}
+.modal .chart {
+    height: 90%;
+}
+
+.graphDefaultClass {
+    max-height: 400px;
+}
+
+.graphDefaultClass.modal {
+    max-height: 100%;
+}
